@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+
+import Expenses from "./components/Expenses/Expenses";
+import NewExpense from "./components/NewExpense/NewExpense";
 
 function App() {
+  //this list of expenses will be coming from back end.
+  const expenses = [
+    { id: 1, title: "Shoping", date: new Date(2023, 1, 1), amount: 5000 },
+    { id: 2, title: "Car washing", date: new Date(2023, 1, 5), amount: 500 },
+    { id: 3, title: "School fee", date: new Date(2023, 1, 5), amount: 50000 },
+    { id: 4, title: "dinner", date: new Date(2023, 1, 5), amount: 5000 },
+  ];
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Expense Manager</h1>
+      <NewExpense />
+      <Expenses expenses={expenses} />
     </div>
   );
 }
