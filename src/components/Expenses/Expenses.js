@@ -24,13 +24,11 @@ const Expenses = (props) => {
         onChangeFilter={filterChangeHandler}
       />
 
-      {filteredExpenses.length === 0 ? (
-        <p>No Expense Found</p>
-      ) : (
+      {filteredExpenses.length === 0 && <p>Expense Not Found</p>}
+      {filteredExpenses.length > 0 &&
         filteredExpenses.map((expense) => {
           return <ExpenseItem key={expense.id} expense={expense} />;
-        })
-      )}
+        })}
     </Card>
   );
 };
