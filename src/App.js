@@ -11,10 +11,13 @@ function App() {
     { id: 3, title: "School fee", date: new Date(2023, 1, 5), amount: 50000 },
     { id: 4, title: "dinner", date: new Date(2023, 1, 5), amount: 5000 },
   ];
+  const addExpenseHandler = (expense) => {
+    console.log(expense);
+  };
   return (
     <div className="App">
       <h1>Expense Manager</h1>
-      <NewExpense />
+      <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses expenses={expenses} />
     </div>
   );
